@@ -13,6 +13,13 @@ const Search = () => {
   //     console.log(key2);
   //   });
   // });
+  function resetHandler() {
+    setTerm("");
+    setFrom("from");
+    setDay("day");
+    setTo("to");
+    setResult(undefined);
+  }
   const searchInputHandler = (event) => {
     setTerm(event.target.value);
     if (event.target.value === "") {
@@ -111,6 +118,7 @@ const Search = () => {
       <button type="button" onClick={searchRequestHandler}>
         Search
       </button>
+      <button onClick={resetHandler}>Reset</button>
       {result && (
         <table>
           <thead>
